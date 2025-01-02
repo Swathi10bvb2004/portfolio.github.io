@@ -7,6 +7,23 @@
     <title>Portfolio and DAA Lab Reflections</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Simple inline styles for demo */
+        .container {
+            display: none; /* Initially hidden */
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
@@ -62,8 +79,11 @@
         <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
     </section>
 
+    <!-- Button to show/hide the DAA Lab Reflections section -->
+    <button id="toggleButton" onclick="toggleSection()">Show DAA Lab Reflections</button>
+
     <!-- DAA Lab Reflections Section -->
-    <div class="container">
+    <div class="container" id="daaSection">
         <h1>DAA Lab Reflections</h1>
         <h2>Key Concepts</h2>
         <ul>
@@ -102,83 +122,4 @@
     visited = set()
     queue = [start]
     visited.add(start)
-    while queue is not empty:
-        node = queue.pop(0)
-        for neighbor in graph[node]:
-            if neighbor not in visited:
-                queue.append(neighbor)
-                visited.add(neighbor)
-}</code></pre>
-            </li>
-
-            <li><strong>Heap</strong>
-                <p>A heap is a special tree-based data structure. In a max heap, the value of any given node is greater than or equal to the values of its children.</p>
-                <pre><code>function insert(heap, value) {
-    heap.append(value)
-    i = length(heap) - 1
-    while i > 0 and heap[parent(i)] < heap[i]:
-        swap(heap, i, parent(i))
-        i = parent(i)
-}</code></pre>
-            </li>
-
-            <li><strong>Sorting</strong>
-                <p>Sorting algorithms arrange elements in a list in a specific order. There are many sorting algorithms like Quick Sort, Merge Sort, etc.</p>
-                <pre><code>function quickSort(arr, low, high) {
-    if low < high:
-        pivotIndex = partition(arr, low, high)
-        quickSort(arr, low, pivotIndex - 1)
-        quickSort(arr, pivotIndex + 1, high)
-}</code></pre>
-            </li>
-
-            <li><strong>Pattern Searching</strong>
-                <p>Pattern searching algorithms are used to find occurrences of a string (or pattern) within another string (the text).</p>
-                <pre><code>function naiveSearch(text, pattern) {
-    n = length(text)
-    m = length(pattern)
-    for i = 0 to n - m:
-        j = 0
-        while j < m and text[i + j] == pattern[j]:
-            j = j + 1
-        if j == m:
-            print("Pattern found at index", i)
-}</code></pre>
-            </li>
-
-            <li><strong>Graph Algorithms</strong>
-                <p>Graph algorithms are used to solve problems related to graph structures like shortest path, detecting cycles, etc.</p>
-                <pre><code>function Dijkstra(graph, source) {
-    dist = {}
-    for vertex in graph:
-        dist[vertex] = infinity
-    dist[source] = 0
-    priorityQueue = [(0, source)]
-    while priorityQueue is not empty:
-        currentDist, u = priorityQueue.pop()
-        for neighbor, weight in graph[u]:
-            if dist[u] + weight < dist[neighbor]:
-                dist[neighbor] = dist[u] + weight
-                priorityQueue.push((dist[neighbor], neighbor))
-}</code></pre>
-            </li>
-        </ul>
-
-        <h2>Challenges</h2>
-        <ol>
-            <li><strong>Challenges in Learning/Understanding the Concepts</strong>
-                <p>Some of the main challenges include understanding time complexity, balancing binary search trees, tracking visited nodes in graph traversal, and visualizing heap structures.</p>
-            </li>
-
-            <li><strong>Challenges in Real-World Applications</strong>
-                <p>Handling large datasets and ensuring efficient access, along with applying theoretical concepts to real-world scenarios like social networks or large-scale graphs.</p>
-            </li>
-
-            <li><strong>Determining the Most Efficient Approach</strong>
-                <p>Breaking down the problem, analyzing the constraints, and choosing the best algorithm based on problem size, structure, and requirements are essential for determining efficiency.</p>
-            </li>
-        </ol>
-    </div>
-</body>
-
-</html>
+    while queue is
