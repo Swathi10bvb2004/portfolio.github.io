@@ -8,10 +8,51 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* Simple inline styles for demo */
+        /* Basic styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #007BFF;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
         #daaSection {
             display: none; /* Initially hidden */
         }
+
         button {
             padding: 10px 20px;
             background-color: #007BFF;
@@ -20,20 +61,36 @@
             cursor: pointer;
             border-radius: 5px;
         }
+
         button:hover {
             background-color: #0056b3;
+        }
+
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow: auto;
         }
     </style>
 </head>
 
 <body>
-    <!-- Portfolio Section -->
-    <header>
-        <h1>Hello, I'm Swathi P Biradar 👋</h1>
-        <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
-    </header>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#daaReflections">DAA Lab Reflections</a></li>
+        </ul>
+    </nav>
 
-    <section>
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <header>
+            <h1>Hello, I'm Swathi P Biradar 👋</h1>
+            <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
+        </header>
+
         <h2>🛠 Projects</h2>
         <ul>
             <li><strong>Engineering Exploration</strong>: Toroidal Winding Machine</li>
@@ -80,26 +137,27 @@
     </section>
 
     <!-- Button to show/hide the DAA Lab Reflections section -->
-    <button id="toggleButton" onclick="toggleSection()">Show DAA Lab Reflections</button>
+    <section id="daaReflections">
+        <button id="toggleButton" onclick="toggleSection()">Show DAA Lab Reflections</button>
 
-    <!-- DAA Lab Reflections Section -->
-    <div class="container" id="daaSection">
-        <h1>DAA Lab Reflections</h1>
-        <h2>Key Concepts</h2>
-        <ul>
-            <li><strong>Time Complexity Analysis</strong>
-                <p>Time complexity refers to the computational complexity that describes the amount of time it takes to run an algorithm. It's usually expressed using Big O notation.</p>
-                <pre><code>function linearSearch(arr, target) {
+        <!-- DAA Lab Reflections Section -->
+        <div class="container" id="daaSection">
+            <h1>DAA Lab Reflections</h1>
+            <h2>Key Concepts</h2>
+            <ul>
+                <li><strong>Time Complexity Analysis</strong>
+                    <p>Time complexity refers to the computational complexity that describes the amount of time it takes to run an algorithm. It's usually expressed using Big O notation.</p>
+                    <pre><code>function linearSearch(arr, target) {
     for i = 0 to length(arr) - 1:
         if arr[i] == target:
             return i
     return -1
 }</code></pre>
-            </li>
+                </li>
 
-            <li><strong>Binary Search Tree (BST)</strong>
-                <p>A binary search tree is a tree structure where each node has at most two children, left child with values less than the node and right child with greater values.</p>
-                <pre><code>function insertNode(root, value) {
+                <li><strong>Binary Search Tree (BST)</strong>
+                    <p>A binary search tree is a tree structure where each node has at most two children, left child with values less than the node and right child with greater values.</p>
+                    <pre><code>function insertNode(root, value) {
     if root == null:
         return new Node(value)
     if value < root.value:
@@ -108,17 +166,17 @@
         root.right = insertNode(root.right, value)
     return root
 }</code></pre>
-            </li>
+                </li>
 
-            <li><strong>DFS (Depth-First Search) and BFS (Breadth-First Search)</strong>
-                <p>DFS explores as far as possible along each branch before backtracking, while BFS explores all neighbors at the current depth before moving to the next level.</p>
-                <pre><code>function DFS(graph, node, visited) {
+                <li><strong>DFS (Depth-First Search) and BFS (Breadth-First Search)</strong>
+                    <p>DFS explores as far as possible along each branch before backtracking, while BFS explores all neighbors at the current depth before moving to the next level.</p>
+                    <pre><code>function DFS(graph, node, visited) {
     visited.add(node)
     for neighbor in graph[node]:
         if neighbor not in visited:
             DFS(graph, neighbor, visited)
 }</code></pre>
-                <pre><code>function BFS(graph, start) {
+                    <pre><code>function BFS(graph, start) {
     visited = set()
     queue = [start]
     visited.add(start)
@@ -129,32 +187,32 @@
                 queue.append(neighbor)
                 visited.add(neighbor)
 }</code></pre>
-            </li>
+                </li>
 
-            <li><strong>Heap</strong>
-                <p>A heap is a special tree-based data structure. In a max heap, the value of any given node is greater than or equal to the values of its children.</p>
-                <pre><code>function insert(heap, value) {
+                <li><strong>Heap</strong>
+                    <p>A heap is a special tree-based data structure. In a max heap, the value of any given node is greater than or equal to the values of its children.</p>
+                    <pre><code>function insert(heap, value) {
     heap.append(value)
     i = length(heap) - 1
     while i > 0 and heap[parent(i)] < heap[i]:
         swap(heap, i, parent(i))
         i = parent(i)
 }</code></pre>
-            </li>
+                </li>
 
-            <li><strong>Sorting</strong>
-                <p>Sorting algorithms arrange elements in a list in a specific order. There are many sorting algorithms like Quick Sort, Merge Sort, etc.</p>
-                <pre><code>function quickSort(arr, low, high) {
+                <li><strong>Sorting</strong>
+                    <p>Sorting algorithms arrange elements in a list in a specific order. There are many sorting algorithms like Quick Sort, Merge Sort, etc.</p>
+                    <pre><code>function quickSort(arr, low, high) {
     if low < high:
         pivotIndex = partition(arr, low, high)
         quickSort(arr, low, pivotIndex - 1)
         quickSort(arr, pivotIndex + 1, high)
 }</code></pre>
-            </li>
+                </li>
 
-            <li><strong>Pattern Searching</strong>
-                <p>Pattern searching algorithms are used to find occurrences of a string (or pattern) within another string (the text).</p>
-                <pre><code>function naiveSearch(text, pattern) {
+                <li><strong>Pattern Searching</strong>
+                    <p>Pattern searching algorithms are used to find occurrences of a string (or pattern) within another string (the text).</p>
+                    <pre><code>function naiveSearch(text, pattern) {
     n = length(text)
     m = length(pattern)
     for i = 0 to n - m:
@@ -164,11 +222,11 @@
         if j == m:
             print("Pattern found at index", i)
 }</code></pre>
-            </li>
+                </li>
 
-            <li><strong>Graph Algorithms</strong>
-                <p>Graph algorithms are used to solve problems related to graph structures like shortest path, detecting cycles, etc.</p>
-                <pre><code>function Dijkstra(graph, source) {
+                <li><strong>Graph Algorithms</strong>
+                    <p>Graph algorithms are used to solve problems related to graph structures like shortest path, detecting cycles, etc.</p>
+                    <pre><code>function Dijkstra(graph, source) {
     dist = {}
     for vertex in graph:
         dist[vertex] = infinity
@@ -181,18 +239,10 @@
                 dist[neighbor] = dist[u] + weight
                 priorityQueue.push((dist[neighbor], neighbor))
 }</code></pre>
-            </li>
-        </ul>
+                </li>
+            </ul>
 
-        <h2>Challenges</h2>
-        <ol>
-            <li><strong>Challenges in Learning/Understanding the Concepts</strong>
-                <p>Some of the main challenges include understanding time complexity, balancing binary search trees, tracking visited nodes in graph traversal, and visualizing heap structures.</p>
-            </li>
-
-            <li><strong>Challenges in Real-World Applications</strong>
-                <p>Handling large datasets and ensuring efficient access, along with applying theoretical concepts to real-world scenarios like social networks or large-scale graphs.</p>
-            </li>
-
-            <li><strong>Determining the Most Efficient Approach</strong>
-                <p>Breaking down the problem, analyzing the constraints, and choosing the best algorithm based on problem size, structure, and requirements are essential for determining efficiency.</p
+            <h2>Challenges</h2>
+            <ol>
+                <li><strong>Challenges in Learning/Understanding the Concepts</strong>
+                    <p>Some of the main challenges include understanding time complexity, balancing binary search trees, tracking visited nodes in
