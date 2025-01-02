@@ -1,418 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio and DAA Lab Reflections</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        h1, h2, h3 {
-            color: #150862; /* Bright accent color for headings */
-        }
-
+        /* Basic styles */
         body {
-            background-image: url('https://image.cdn2.seaart.me/2024-12-31/ctprnute878c73dqal2g-1/813ea37c0d85b04254ec18124c6dcc95_high.webp'); 
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            color: #e3f0f0;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
         }
 
-        header {
-            background-color: #daf3f35d;
-            text-align: center;
-            padding: 50px 0;
-           
-        }
-
-        header h1 {
-    margin: 0;
-    font-size: 28px;
-    color: #100b6af9; /* Keeps your current color */
-    background-color: #ffffff; /* Adds white background */
-    padding: 20px 20px; /* Adds spacing inside the background */
-    display: inline-block; /* Ensures the background wraps only the text, not the full header width */
-    border-radius: 5px; /* Optional: rounds the corners for a polished look */
-}
         nav {
-            background-color: rgba(0, 0, 0, 0.001);
+            background-color: #007BFF;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
             display: flex;
-            justify-content: space-around;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            margin-top: 10px; /* Adds a gap between the header and navigation */
         }
 
-        nav a {
-            color: #ff0000;
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
             text-decoration: none;
-            font-size: 18px;
             font-weight: bold;
-            padding: 0 15px; /* Adds spacing between navigators */
-            background-color: #ffffff; /* Adds white background */
-    padding: 20px 20px; /* Adds spacing inside the background */
-    display: inline-block; /* Ensures the background wraps only the text, not the full header width */
-    border-radius: 5px;
         }
 
-        nav a:hover {
+        nav ul li a:hover {
             text-decoration: underline;
         }
 
         section {
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 800px;
-            background: rgba(255, 255, 255, 0.234);
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        /* Lab Reflections initially hidden */
+        #daaSection {
+            display: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
             border-radius: 5px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        .home img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-            
+        button:hover {
+            background-color: #0056b3;
         }
 
-        .connect {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .connect a {
-            margin: 10px 0;
-            font-size: 18px;
-            color: #000100;
-            text-decoration: none;
-        }
-
-        .connect a:hover {
-            text-decoration: underline;
-        }
-
-        pre, code {
-            background: rgba(0, 0, 0, 0.9);
-            color: #fff;
+        pre {
+            background-color: #f4f4f4;
             padding: 10px;
-            border-radius: 5px;
-            display: block;
-            overflow-x: auto;
-            margin: 10px 0;
-        }
-
-        .home {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .reflection {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
+            border: 1px solid #ddd;
+            overflow: auto;
         }
     </style>
-    
-<script>
-        function showSection(sectionId) {
-            // Hide all sections
-            var sections = document.querySelectorAll('section');
-            sections.forEach(function(section) {
-                section.style.display = 'none';
-            });
+</head>
 
-            // Show the selected section
-            var section = document.getElementById(sectionId);
-            if (section) {
-                section.style.display = 'block';
-            }
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#portfolio">Portfolio Introduction</a></li>
+            <li><a href="#daaReflections" onclick="showLabReflections()">DAA Lab Reflections</a></li>
+        </ul>
+    </nav>
+
+    <!-- Portfolio Introduction Section -->
+    <section id="portfolio">
+        <header>
+            <h1>Hello, I'm Swathi P Biradar 👋</h1>
+            <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
+        </header>
+
+        <h2>🛠 Projects</h2>
+        <ul>
+            <li><strong>Engineering Exploration</strong>: Toroidal Winding Machine</li>
+            <li><strong>Design Thinking And Social Innovation</strong>: Problems Caused Due to Downed Electric Wires</li>
+        </ul>
+
+        <h2>🚀 Skills</h2>
+        <ul>
+            <li>C++, Python, JavaScript</li>
+            <li>Data Structures and Algorithms</li>
+            <li>Web Development (React.js, Node.js)</li>
+        </ul>
+
+        <h2>🌐 Find Me Online</h2>
+        <ul>
+            <li><a href="https://github.com/Swathi10bvb2004" target="_blank">GitHub</a></li>
+        </ul>
+
+        <h2>Portfolio Topic</h2>
+        <dl>
+            <dt>Course Name</dt>
+            <dd>Design Analysis And Algorithm</dd>
+
+            <dt>Course Code</dt>
+            <dd>24ECAC203</dd>
+
+            <dt>Name</dt>
+            <dd>Swathi P Biradar</dd>
+
+            <dt>SRN</dt>
+            <dd>01FE23BCI111</dd>
+
+            <dt>Course Instructor</dt>
+            <dd>K M M Rajashekharaiah</dd>
+
+            <dt>University</dt>
+            <dd>KLE Technological University</dd>
+
+            <dt>Portfolio Topic/Domain</dt>
+            <dd>City Design</dd>
+        </dl>
+
+        <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
+    </section>
+
+  <nav>
+   <a href="javascript:void(0);" onclick="showSection('reflection')">Course Learning Reflection</a>
+ <nav>
+    <section id="daaReflections" style="display: none;">
+        <h1>DAA Lab Reflections</h1>
+        <h2>Key Concepts</h2>
+        <ul>
+            <li><strong>Time Complexity Analysis</strong>
+                <p>Time complexity refers to the computational complexity that describes the amount of time it takes to run an algorithm. It's usually expressed using Big O notation.</p>
+                <pre><code>function linearSearch(arr, target) {
+    for i = 0 to length(arr) - 1:
+        if arr[i] == target:
+            return i
+    return -1
+}</code></pre>
+            </li>
+
+            <li><strong>Binary Search Tree (BST)</strong>
+                <p>A binary search tree is a tree structure where each node has at most two children, left child with values less than the node and right child with greater values.</p>
+                <pre><code>function insertNode(root, value) {
+    if root == null:
+        return new Node(value)
+    if value < root.value:
+        root.left = insertNode(root.left, value)
+    else:
+        root.right = insertNode(root.right, value)
+    return root
+}</code></pre>
+            </li>
+
+            <li><strong>DFS (Depth-First Search) and BFS (Breadth-First Search)</strong>
+                <p>DFS explores as far as possible along each branch before backtracking, while BFS explores all neighbors at the current depth before moving to the next level.</p>
+                <pre><code>function DFS(graph, node, visited) {
+    visited.add(node)
+    for neighbor in graph[node]:
+        if neighbor not in visited:
+            DFS(graph, neighbor, visited)
+}</code></pre>
+                <pre><code>function BFS(graph, start) {
+    visited = set()
+    queue = [start]
+    visited.add(start)
+    while queue is not empty:
+        node = queue.pop(0)
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                queue.append(neighbor)
+                visited.add(neighbor)
+}</code></pre>
+            </li>
+
+            <li><strong>Heap</strong>
+                <p>A heap is a special tree-based data structure. In a max heap, the value of any given node is greater than or equal to the values of its children.</p>
+                <pre><code>function insert(heap, value) {
+    heap.append(value)
+    i = length(heap) - 1
+    while i > 0 and heap[parent(i)] < heap[i]:
+        swap(heap, i, parent(i))
+        i = parent(i)
+}</code></pre>
+            </li>
+
+            <li><strong>Sorting</strong>
+                <p>Sorting algorithms arrange elements in a list in a specific order. There are many sorting algorithms like Quick Sort, Merge Sort, etc.</p>
+                <pre><code>function quickSort(arr, low, high) {
+    if low < high:
+        pivotIndex = partition(arr, low, high)
+        quickSort(arr, low, pivotIndex - 1)
+        quickSort(arr, pivotIndex + 1, high)
+}</code></pre>
+            </li>
+        </ul>
+
+        <h2>Challenges</h2>
+        <ol>
+            <li><strong>Challenges in Learning/Understanding the Concepts</strong>
+                <p>Some of the main challenges include understanding time complexity, balancing binary search trees, tracking visited nodes in graph traversal, and visualizing heap structures.</p>
+            </li>
+
+            <li><strong>Challenges in Real-World Applications</strong>
+                <p>Handling large datasets and ensuring efficient access, along with applying theoretical concepts to real-world scenarios like social networks or large-scale graphs.</p>
+            </li>
+
+            <li><strong>Determining the Most Efficient Approach</strong>
+                <p>Breaking down the problem, analyzing the constraints, and choosing the best algorithm based on problem size, structure, and requirements are essential for determining efficiency.</p>
+            </li>
+        </ol>
+    </section>
+
+    <script>
+        function showLabReflections() {
+            const labSection = document.getElementById('daaReflections');
+            labSection.style.display = 'block';
         }
     </script>
-</head>
-<body>
-
-<header>
-    <h1>Data Analyzing & Algorithms Portfolio</h1>
-</header>
-
-<nav>
-    <a href="javascript:void(0);" onclick="showSection('home')">Home</a>
-    <a href="javascript:void(0);" onclick="showSection('reflection')">Course Learning Reflection</a>
-    <a href="javascript:void(0);" onclick="showSection('connect')">Connect with Me</a>
-</nav>
-
-<section id="home" class="home">
-    <img src="https://media.licdn.com/dms/image/v2/D5603AQHRnkELtM8ikQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1731940754131?e=1741219200&v=beta&t=VOJ5edSsVyueehPge8mieqm_yohmsxPUOAFFM6f-INg" alt="Profile Picture">
-    <h1>Sonu Vaishnavi</h1>
-    <p>Hi! I am a Computer Science and Engineering student with a passion for technology, problem-solving, and community service. Currently pursuing my bachelor's degree, I aspire to become a software engineer and contribute meaningfully to society.</p>
-    <p>I have a strong interest in teaching underprivileged kids and actively work with NGOs to make a difference. My academic journey has been shaped by dedication, hard work, and a love for learning.</p>
-</section>
-<section id="reflection" style="display: none;">
-    <h2>Space and Time Efficiency</h2>
-    <p>Analyzing algorithm complexity ensures scalability and efficient handling of larger data. For example, bubble sort has O(n²), while merge sort has O(n log n).</p>
-
-   
-        <h2>Orders of Growth</h2>
-        <ul>
-            <li><strong>O(1):</strong> Constant time (e.g., array access)</li>
-            <li><strong>O(log n):</strong> Logarithmic time (e.g., binary search)</li>
-            <li><strong>O(n):</strong> Linear time (e.g., iterating through an array)</li>
-            <li><strong>O(n²):</strong> Quadratic time (e.g., bubble sort)</li>
-        </ul>
-  
-
-    
-        <h2>Sorting and Searching</h2>
-
-        <h3>Sorting Algorithms</h3>
-
-        <h4>Bubble Sort:</h4>
-        <pre>
-        <code>
-        ALGORITHM BubbleSort(A[0..n-1])
-            // Sorts a given array using bubble sort
-            // Input: An array A[0..n-1] of orderable elements
-            // Output: Array A[0...n-1] sorted in ascending order
-            for i <- 0 to n - 2 do
-                for j <- 0 to n - 2 - i do
-                    if A[j+1] < A[j]
-                        swap A[j] and A[j+1]
-        </code>
-        </pre>
-
-        <h4>Merge Sort:</h4>
-        <pre>
-        <code>
-        ALGORITHM MergeSort(A[0..n-1])
-            if n > 1
-                copy A[0...|n/2| - 1 ] to B[0...|n/2| - 1]
-                copy A[|n/2|... n - 1 ] to C[0......|n/2| - 1]
-                MergeSort(B[0...|n/2| - 1])
-                MergeSort(C[0......|n/2| - 1])
-                Merge(B, C, A)
-
-        ALGORITHM Merge(B[0...p-1], C[0...q-1], A[0...p+q-1])
-            i <- 0
-            j <- 0
-            k <- 0
-            while i < p and j < q do
-                if B[i] <= C[j]
-                    A[k] <- B[i]
-                    i <- i + 1
-                else
-                    A[k] <- C[j]
-                    j <- j + 1
-                k <- k + 1
-            if i = p
-                copy C[j...q - 1] to A[k...p + q - 1]
-            else
-                copy B[i...p - 1] to A[k...p + q - 1]
-        </code>
-        </pre>
-
-        <h4>Quick Sort:</h4>
-        <pre>
-        <code>
-        #include &lt;iostream&gt;
-        #include &lt;vector&gt;
-        using namespace std;
-
-        int partition(vector&lt;int&gt;& A, int l, int r) {
-            int p = A[l];
-            int i = l;
-            int j = r + 1;
-            while (true) {
-                do {
-                    i++;
-                } while (i &lt;= r && A[i] &lt; p);
-
-                do {
-                    j--;
-                } while (A[j] &gt; p);
-
-                if (i &gt;= j) break;
-                swap(A[i], A[j]);
-            }
-            swap(A[l], A[j]);
-            return j;
-        }
-
-        void quickSort(vector&lt;int&gt;& A, int l, int r) {
-            if (l &lt; r) {
-                int s = partition(A, l, r);
-                quickSort(A, l, s - 1);
-                quickSort(A, s + 1, r);
-            }
-        }
-
-        int main() {
-            vector&lt;int&gt; A = {10, 7, 8, 9, 1, 5};
-            quickSort(A, 0, A.size() - 1);
-            for (int x : A) cout &lt;&lt; x &lt;&lt; " ";
-            return 0;
-        }
-        </code>
-        </pre>
-
-        <h3>Searching Algorithms</h3>
-
-        <h4>Binary Search:</h4>
-        <pre>
-        <code>
-        int binarySearch(const vector&lt;int&gt;& arr, int key) {
-            int left = 0, right = arr.size() - 1;
-            while (left &lt;= right) {
-                int mid = left + (right - left) / 2;
-                if (arr[mid] == key) return mid;
-                if (arr[mid] &lt; key) left = mid + 1;
-                else right = mid - 1;
-            }
-            return -1;
-        }
-        </code>
-        </pre>
-    
-
-    
-        <h2>Graph Algorithms</h2>
-
-        <h3>Spanning Trees</h3>
-        <h4>Kruskal’s Algorithm:</h4>
-        <pre>
-        <code>
-        int Find(int parent[], int i) {
-            if (parent[i] != i)
-                parent[i] = Find(parent, parent[i]);
-            return parent[i];
-        }
-
-        void Union(int parent[], int rank[], int x, int y) {
-            int xroot = Find(parent, x);
-            int yroot = Find(parent, y);
-
-            if (rank[xroot] &lt; rank[yroot])
-                parent[xroot] = yroot;
-            else if (rank[xroot] &gt; rank[yroot])
-                parent[yroot] = xroot;
-            else {
-                parent[yroot] = xroot;
-                rank[xroot]++;
-            }
-        }
-
-        void KruskalMST(Edge edges[], int E, int V) {
-            int weights[E], idx[E];
-            for (int i = 0; i &lt; E; i++) {
-                weights[i] = edges[i].weight;
-                idx[i] = i;
-            }
-
-            MergeSort(weights, idx, 0, E - 1);
-
-            int parent[V], rank[V];
-            for (int i = 0; i &lt; V; i++) {
-                parent[i] = i;
-                rank[i] = 0;
-            }
-
-            Edge mst[V - 1];
-            int mstSize = 0;
-
-            for (int i = 0; i &lt; E && mstSize &lt; V - 1; i++) {
-                Edge edge = edges[idx[i]];
-                int x = Find(parent, edge.src);
-                int y = Find(parent, edge.dest);
-
-                if (x != y) {
-                    mst[mstSize++] = edge;
-                    Union(parent, rank, x, y);
-                }
-            }
-
-            cout &lt;&lt; "Edges in the Minimum Spanning Tree:" &lt;&lt; endl;
-            int cost = 0;
-            for (int i = 0; i &lt; mstSize; i++) {
-                cout &lt;&lt; mst[i].src &lt;&lt; " -- " &lt;&lt; mst[i].dest &lt;&lt; " == " &lt;&lt; mst[i].weight &lt;&lt; endl;
-                cost += mst[i].weight;
-            }
-            cout &lt;&lt; "Cost = " &lt;&lt; cost &lt;&lt; endl;
-        }
-        </code>
-        </pre>
-
-        <h3>Shortest Path Algorithms</h3>
-        <h4>Dijkstra's Algorithm:</h4>
-        <pre>
-        <code>
-        #include &lt;iostream&gt;
-        #include &lt;vector&gt;
-        #define MAX 9999
-        using namespace std;
-
-        class dijkstra {
-        public:
-            int dist[100];
-            int path[100];
-            int visited[100] = {0};
-            int v;
-            int src;
-
-            void read(int cost[50][50]);
-            void initialize(int cost[50][50]);
-        };
-
-        void dijkstra::initialize(int cost[50][50]) {
-            for (int i = 0; i &lt; v; i++) {
-                path[i] = src;
-                dist[i] = cost[src][i];
-                visited[i] = 0;
-            }
-            visited[src] = 1;
-        }
-
-        void dijkstra::read(int cost[50][50]) {
-            cout &lt;&lt; "Enter the cost matrix:" &lt;&lt; endl;
-            for (int i = 0; i &lt; v; i++) {
-                for (int j = 0; j &lt; v; j++) {
-                    cin &gt;&gt; cost[i][j];
-                }
-            }
-        }
-
-        int main() {
-            int cost[50][50], u, v;
-            dijkstra ob;
-            cout &lt;&lt; "Enter number of vertices:" &lt;&lt; endl;
-            cin &gt;&gt; ob.v;
-            cout &lt;&lt; "Enter source vertex:" &lt;&lt; endl;
-            cin &gt;&gt; ob.src;
-            ob.read(cost);
-            ob.initialize(cost);
-            return 0;
-        }
-        </code>
-        </pre>
-    
-</section>
-
-
-<section id="connect" class="connect" style="display: none;">
-    <h1>Connect with Me</h1>
-    <a href="https://github.com/YourGitHubUsername" target="_blank"    >GitHub  </a>
-    <a href="https://www.linkedin.com/in/YourLinkedInUsername" target="_blank"   >LinkedIn  </a>
-    <a href="mailto:yourname@example.com">Email  </a>
-</section>
-
 </body>
+
 </html>
