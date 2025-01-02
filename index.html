@@ -50,7 +50,7 @@
         }
 
         /* Lab Reflections initially hidden */
-        #daaSection {
+        #daaReflections {
             display: none;
         }
 
@@ -72,6 +72,12 @@
             padding: 10px;
             border: 1px solid #ddd;
             overflow: auto;
+        }
+
+        /* Ensure sections stack vertically */
+        #portfolio, #daaReflections {
+            clear: both;
+            display: block;
         }
     </style>
 </head>
@@ -137,10 +143,8 @@
         <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
     </section>
 
-  <nav>
-   <a href="javascript:void(0);" onclick="showSection('reflection')">Course Learning Reflection</a>
- <nav>
-    <section id="daaReflections" style="display: none;">
+    <!-- Lab Reflections Section (Initially Hidden) -->
+    <section id="daaReflections">
         <h1>DAA Lab Reflections</h1>
         <h2>Key Concepts</h2>
         <ul>
@@ -235,3 +239,4 @@
 </body>
 
 </html>
+
