@@ -1,107 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio and DAA Lab Reflections</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        /* Basic styles */
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav {
-            background-color: #007BFF;
-            padding: 10px;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            margin: 20px;
-        }
-
-        h1, h2 {
-            color: #333;
-        }
-
-        /* Lab Reflections initially hidden */
-        #daaReflections {
-            display: none;
-        }
-
-        button {
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ddd;
-            overflow: auto;
-        }
-
-        /* Ensure sections stack vertically */
-        #portfolio, #daaReflections {
-            clear: both;
-            display: block;
-        }
-    </style>
 </head>
-
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="#portfolio">Portfolio Introduction</a></li>
-            <li><a href="#daaReflections" onclick="showLabReflections()">DAA Lab Reflections</a></li>
-        </ul>
-    </nav>
+    <header>
+        <h1>Hello, I'm Swathi P Biradar 👋</h1>
+        <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
+    </header>
 
-    <!-- Portfolio Introduction Section -->
-    <section id="portfolio">
-        <header>
-            <h1>Hello, I'm Swathi P Biradar 👋</h1>
-            <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
-        </header>
-
+    <section>
         <h2>🛠 Projects</h2>
         <ul>
-            <li><strong>Engineering Exploration</strong>: Toroidal Winding Machine</li>
-            <li><strong>Design Thinking And Social Innovation</strong>: Problems Caused Due to Downed Electric Wires</li>
+            <li><strong>Engineering Exploration</strong>:Toroidal Winding Machine</li>
+            <li><strong>Design Thinking And Social Innovation</strong>:Problems Caused Due TO Downed Electric Wires</li>
         </ul>
 
         <h2>🚀 Skills</h2>
@@ -119,7 +35,7 @@
         <h2>Portfolio Topic</h2>
         <dl>
             <dt>Course Name</dt>
-            <dd>Design Analysis And Algorithm</dd>
+            <dd>Design Analysis And Algorithrm</dd>
 
             <dt>Course Code</dt>
             <dd>24ECAC203</dd>
@@ -134,7 +50,7 @@
             <dd>K M M Rajashekharaiah</dd>
 
             <dt>University</dt>
-            <dd>KLE Technological University</dd>
+            <dd>KLE Techological University</dd>
 
             <dt>Portfolio Topic/Domain</dt>
             <dd>City Design</dd>
@@ -142,101 +58,188 @@
 
         <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
     </section>
-
-    <!-- Lab Reflections Section (Initially Hidden) -->
-    <section id="daaReflections">
-        <h1>DAA Lab Reflections</h1>
-        <h2>Key Concepts</h2>
+<section>
+        <h2>📚 About this Course: Design Analysis and Algorithm</h2>
+        <p>The <strong>Design Analysis and Algorithm</strong> course focuses on developing a solid foundation in designing, analyzing, and implementing algorithms to solve computational problems efficiently. It covers the essential techniques for optimizing algorithm performance with an emphasis on time and space complexity analysis.</p>
+        
+        <h3>Key Topics Covered:</h3>
         <ul>
-            <li><strong>Time Complexity Analysis</strong>
-                <p>Time complexity refers to the computational complexity that describes the amount of time it takes to run an algorithm. It's usually expressed using Big O notation.</p>
-                <pre><code>function linearSearch(arr, target) {
-    for i = 0 to length(arr) - 1:
-        if arr[i] == target:
-            return i
-    return -1
-}</code></pre>
-            </li>
-
-            <li><strong>Binary Search Tree (BST)</strong>
-                <p>A binary search tree is a tree structure where each node has at most two children, left child with values less than the node and right child with greater values.</p>
-                <pre><code>function insertNode(root, value) {
-    if root == null:
-        return new Node(value)
-    if value < root.value:
-        root.left = insertNode(root.left, value)
-    else:
-        root.right = insertNode(root.right, value)
-    return root
-}</code></pre>
-            </li>
-
-            <li><strong>DFS (Depth-First Search) and BFS (Breadth-First Search)</strong>
-                <p>DFS explores as far as possible along each branch before backtracking, while BFS explores all neighbors at the current depth before moving to the next level.</p>
-                <pre><code>function DFS(graph, node, visited) {
-    visited.add(node)
-    for neighbor in graph[node]:
-        if neighbor not in visited:
-            DFS(graph, neighbor, visited)
-}</code></pre>
-                <pre><code>function BFS(graph, start) {
-    visited = set()
-    queue = [start]
-    visited.add(start)
-    while queue is not empty:
-        node = queue.pop(0)
-        for neighbor in graph[node]:
-            if neighbor not in visited:
-                queue.append(neighbor)
-                visited.add(neighbor)
-}</code></pre>
-            </li>
-
-            <li><strong>Heap</strong>
-                <p>A heap is a special tree-based data structure. In a max heap, the value of any given node is greater than or equal to the values of its children.</p>
-                <pre><code>function insert(heap, value) {
-    heap.append(value)
-    i = length(heap) - 1
-    while i > 0 and heap[parent(i)] < heap[i]:
-        swap(heap, i, parent(i))
-        i = parent(i)
-}</code></pre>
-            </li>
-
-            <li><strong>Sorting</strong>
-                <p>Sorting algorithms arrange elements in a list in a specific order. There are many sorting algorithms like Quick Sort, Merge Sort, etc.</p>
-                <pre><code>function quickSort(arr, low, high) {
-    if low < high:
-        pivotIndex = partition(arr, low, high)
-        quickSort(arr, low, pivotIndex - 1)
-        quickSort(arr, pivotIndex + 1, high)
-}</code></pre>
-            </li>
+            <li><strong>Time and Space Complexity:</strong> Learn to evaluate and compare algorithms using Big-O notation.</li>
+            <li><strong>Sorting and Searching Algorithms:</strong> Study fundamental algorithms like QuickSort, MergeSort, and Binary Search.</li>
+            <li><strong>Divide and Conquer:</strong> Solve problems by breaking them into smaller subproblems, such as matrix multiplication.</li>
+            <li><strong>Dynamic Programming:</strong> Learn optimization techniques like the Knapsack problem and Fibonacci sequence.</li>
+            <li><strong>Greedy Algorithms:</strong> Solve problems by making locally optimal choices, such as activity selection.</li>
+            <li><strong>Graph Algorithms:</strong> Explore algorithms for graph-related problems, including DFS, BFS, Dijkstra’s, and Prim’s.</li>
+            <li><strong>NP-Completeness:</strong> Understand computationally hard problems and their significance.</li>
         </ul>
-
-        <h2>Challenges</h2>
-        <ol>
-            <li><strong>Challenges in Learning/Understanding the Concepts</strong>
-                <p>Some of the main challenges include understanding time complexity, balancing binary search trees, tracking visited nodes in graph traversal, and visualizing heap structures.</p>
-            </li>
-
-            <li><strong>Challenges in Real-World Applications</strong>
-                <p>Handling large datasets and ensuring efficient access, along with applying theoretical concepts to real-world scenarios like social networks or large-scale graphs.</p>
-            </li>
-
-            <li><strong>Determining the Most Efficient Approach</strong>
-                <p>Breaking down the problem, analyzing the constraints, and choosing the best algorithm based on problem size, structure, and requirements are essential for determining efficiency.</p>
-            </li>
-        </ol>
+        
+        <h3>Course Outcome:</h3>
+        <p>By the end of the course, students will be able to design efficient algorithms, analyze their performance, and apply them to solve real-world problems effectively.</p>
     </section>
 
+    <!-- Buttons for Theory and Lab Reflections -->
+    <section>
+        <button id="toggleLabReflectionBtn" style="background-color: green; color: white; padding: 10px 10px; border: none; cursor: pointer;">click for Lab Reflections</button>
+        <button id="toggleTheoryReflectionBtn" style="background-color: green; color: white; padding: 10px 10px; border: none; cursor: pointer;">click for Theory Reflections</button>
+    </section>
+
+    <!-- Lab Reflection Section -->
+    <section id="labReflectionContent" style="display: none;">
+        <h2>📖 Reflection on Learning Data Structures and Algorithms</h2>
+        <p>Throughout this course, I delved deep into fundamental data structures and algorithms, which are the backbone of efficient computing. Key topics I explored include <strong>Time Complexity Analysis</strong>, <strong>Binary Search Trees (BST)</strong>, <strong>DFS and BFS</strong>, <strong>Heap Sorting</strong>, <strong>Pattern Searching</strong>, and <strong>Graph Algorithms</strong>. Here's a reflection on what I learned, the challenges I faced, and how I approached solving complex problems.</p>
+
+        <h3>Key Concepts Learned</h3>
+        <h4>1. Time Complexity Analysis</h4>
+        <p>Time complexity analysis is essential for determining the efficiency of algorithms. By mastering <strong>Big-O notation</strong>, I learned how to evaluate the performance of algorithms, especially for large input sizes. The ability to analyze an algorithm's <strong>best, worst, and average-case</strong> complexities helps select the optimal approach for solving problems.</p>
+
+        <pre><code>def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]</code></pre>
+
+        <h4>2. Binary Search Tree (BST)</h4>
+        <p>I gained a strong understanding of how <strong>BSTs</strong> allow efficient insertion, deletion, and search operations in logarithmic time. The main challenge was mastering tree traversal methods, both iterative and recursive, and understanding the importance of maintaining balance in the tree to ensure performance remains optimal.</p>
+
+        <pre><code>class Node:
+    def __init__(self, key):
+        self.left = None
+        self.right = None
+        self.value = key
+
+def insert(root, key):
+    if root is None:
+        return Node(key)
+    if key < root.value:
+        root.left = insert(root.left, key)
+    else:
+        root.right = insert(root.right, key)
+    return root</code></pre>
+
+        <h4>3. DFS and BFS</h4>
+        <p><strong>DFS</strong> is useful for exploring paths deeply, while <strong>BFS</strong> is efficient for finding the shortest path in unweighted graphs. I implemented both in various graph scenarios, such as finding connected components or shortest paths.</p>
+
+        <pre><code>def dfs(graph, node, visited):
+    if node not in visited:
+        print(node, end=" ")
+        visited.add(node)
+        for neighbor in graph[node]:
+            dfs(graph, neighbor, visited)</code></pre>
+
+        <h4>4. Heap Sorting</h4>
+        <p><strong>Heap Sort</strong> introduced me to the importance of the heap data structure. I learned how the binary heap allows us to efficiently retrieve the smallest or largest element and perform sorting in <strong>O(n log n)</strong> time. The challenge was understanding how the heap property is maintained during insertions and deletions.</p>
+
+        <pre><code>def heapify(arr, n, i):
+    largest = i
+    left = 2 * i + 1
+    right = 2 * i + 2
+
+    if left < n and arr[left] > arr[largest]:
+        largest = left
+    if right < n and arr[right] > arr[largest]:
+        largest = right
+
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)</code></pre>
+
+        <h4>5. Pattern Searching</h4>
+        <p>I explored various algorithms for <strong>Pattern Searching</strong>, such as <strong>Knuth-Morris-Pratt (KMP)</strong>, which is highly efficient for finding substrings in a larger string. These algorithms optimize the brute-force approach by reducing unnecessary comparisons.</p>
+
+        <pre><code>def KMP_search(text, pattern):
+    lps = [0] * len(pattern)
+    j = 0
+    computeLPS(pattern, lps)
+    i = 0
+    while i < len(text):
+        if pattern[j] == text[i]:
+            i += 1
+            j += 1
+        if j == len(pattern):
+            print("Pattern found at index " + str(i - j))
+            j = lps[j - 1]
+        elif i < len(text) and pattern[j] != text[i]:
+            if j != 0:
+                j = lps[j - 1]
+            else:
+                i += 1</code></pre>
+
+        <h4>6. Graph Algorithms</h4>
+        <p>I learned the importance of <strong>graphs</strong> in representing real-world relationships, such as in social networks or transport systems. Implementing algorithms like <strong>Dijkstra's</strong> and <strong>Prim's</strong> for shortest paths and minimum spanning trees, respectively, was a rewarding challenge.</p>
+
+        <pre><code>import heapq
+
+def dijkstra(graph, start):
+    distances = {vertex: float('infinity') for vertex in graph}
+    distances[start] = 0
+    priority_queue = [(0, start)]
+
+    while priority_queue:
+        current_distance, current_vertex = heapq.heappop(priority_queue)
+
+        for neighbor, weight in graph[current_vertex].items():
+            distance = current_distance + weight
+            if distance < distances[neighbor]:
+                distances[neighbor] = distance
+                heapq.heappush(priority_queue, (distance, neighbor))
+
+    return distances</code></pre>
+
+        <h3>Challenges Faced</h3>
+        <p>One of the biggest challenges was understanding the time and space complexities associated with each algorithm. For example, sorting algorithms like MergeSort require careful handling of memory allocation, and understanding recursive calls in depth-first search was tricky but rewarding once I understood the underlying mechanism.</p>
+
+        <h3>Challenges in Relating to Real-World Applications</h3>
+        <p>Time Complexity is theoretical, and applying it to real-world systems can sometimes be inaccurate due to factors like input size and hardware limitations. For algorithms like Graph Traversal and Heap Sorting, the scale of data in real-world applications requires additional optimizations to manage performance.</p>
+
+        <h3>Approach and Strategy</h3>
+        <p>My approach involved a balance of theory and practical implementation. After understanding the theoretical foundations, I would try to implement each algorithm from scratch, and debug my code thoroughly. Working on different problems helped me consolidate my understanding and improve my problem-solving skills.</p>
+    </section>
+
+    <!-- Theory Reflection Section -->
+    <section id="theoryReflectionContent" style="display: none;">
+        <h2>📖 Reflection on Learning Theory in Design Analysis and Algorithm</h2>
+      <h3>1. Introduction to Theoretical Concepts</h3>
+    <p>In my theoretical courses, I delved into the core principles and concepts that form the backbone of computer science. From understanding the fundamental data structures to analyzing complex algorithms, the theoretical foundations helped me develop a solid base for solving real-world problems efficiently. I learned the significance of data modeling, optimization, and computational theory, which play a critical role in designing robust systems.</p>
+    
+    <h3>2. Key Concepts and Topics Learned</h3>
+    <ul>
+        <li><strong>Data Structures:</strong> I studied various data structures like arrays, linked lists, trees, and graphs. These are essential for storing, organizing, and manipulating data in an efficient manner.</li>
+        <li><strong>Algorithms:</strong> Algorithms such as quicksort, mergesort, and dynamic programming introduced me to the concept of problem-solving and the efficiency of solutions. I also learned about time complexity and how to choose the most efficient algorithm for a problem.</li>
+        <li><strong>Database Design:</strong> Topics like normalization and ER modeling were integral to understanding how data is organized and stored in databases. I learned how to design a database schema that avoids redundancy and ensures data integrity.</li>
+        <li><strong>Systems Design:</strong> Through concepts like microservices and architectural patterns, I learned how large-scale systems are designed to be scalable, fault-tolerant, and easy to maintain.</li>
+        <li><strong>Mathematics for Computer Science:</strong> Understanding concepts like probability, combinatorics, and complexity theory was critical in analyzing algorithms and predicting their behavior in different scenarios.</li>
+    </ul>
+
+    <h3>3. Challenges Faced</h3>
+    <p>Throughout my theoretical studies, I faced several challenges, particularly in understanding the complexities of algorithms. For instance, Big O notation was initially difficult to grasp as I struggled to understand how it applies to real-world scenarios. The abstraction of mathematical concepts like combinatorics and probability also posed challenges, but with continuous practice and application, I began to see their relevance in problem-solving.</p>
+
+    <h3>4. Approach and Strategy for Mastery</h3>
+    <p>My strategy for mastering theory involved a combination of consistent practice, breaking down complex topics into smaller sections, and using various learning resources. I solved problems daily, consulted textbooks and research papers, and worked on projects that applied the theoretical concepts. This hands-on approach helped me connect theory with practical implementation and solidified my understanding.</p>
+
+    <h3>5. Theoretical Knowledge in Practice</h3>
+    <p>The theoretical knowledge gained from my courses was applied in several projects, including designing optimized database schemas for real-world applications and implementing efficient sorting algorithms. I also used dynamic programming to solve complex problems like the knapsack problem and Fibonacci sequence, gaining practical insights into optimization techniques.</p>
+
+    <h3>6. Future Learning Goals</h3>
+    <p>While I have learned a lot, there is always room for improvement. I plan to deepen my understanding of advanced topics like machine learning algorithms, distributed systems, and cloud computing. Additionally, I would like to gain more practical experience in systems design, especially in large-scale applications, and understand how to implement theoretical concepts in real-world scenarios more effectively.</p>
+<section>
+
+        
     <script>
-        function showLabReflections() {
-            const labSection = document.getElementById('daaReflections');
-            labSection.style.display = 'block';
-        }
+        const toggleLabReflectionBtn = document.getElementById('toggleLabReflectionBtn');
+        const toggleTheoryReflectionBtn = document.getElementById('toggleTheoryReflectionBtn');
+        const labReflectionContent = document.getElementById('labReflectionContent');
+        const theoryReflectionContent = document.getElementById('theoryReflectionContent');
+
+        toggleLabReflectionBtn.addEventListener('click', () => {
+            theoryReflectionContent.style.display = 'none';
+            labReflectionContent.style.display = labReflectionContent.style.display === 'none' ? 'block' : 'none';
+        });
+
+        toggleTheoryReflectionBtn.addEventListener('click', () => {
+            labReflectionContent.style.display = 'none';
+            theoryReflectionContent.style.display = theoryReflectionContent.style.display === 'none' ? 'block' : 'none';
+        });
     </script>
 </body>
-
 </html>
-
