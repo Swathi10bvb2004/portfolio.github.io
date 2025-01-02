@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Portfolio and DAA Lab Reflections</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <!-- Portfolio Section -->
     <header>
         <h1>Hello, I'm Swathi P Biradar 👋</h1>
         <p>I am passionate about technology and problem-solving. Here's a glimpse of my work:</p>
@@ -16,8 +19,8 @@
     <section>
         <h2>🛠 Projects</h2>
         <ul>
-            <li><strong>Engineering Exploration</strong>:Toroidal Winding Machine</li>
-            <li><strong>Design Thinking And Social Innovation</strong>:Problems Caused Due TO Downed Electric Wires</li>
+            <li><strong>Engineering Exploration</strong>: Toroidal Winding Machine</li>
+            <li><strong>Design Thinking And Social Innovation</strong>: Problems Caused Due to Downed Electric Wires</li>
         </ul>
 
         <h2>🚀 Skills</h2>
@@ -35,7 +38,7 @@
         <h2>Portfolio Topic</h2>
         <dl>
             <dt>Course Name</dt>
-            <dd>Design Analysis And Algorithrm</dd>
+            <dd>Design Analysis And Algorithm</dd>
 
             <dt>Course Code</dt>
             <dd>24ECAC203</dd>
@@ -50,7 +53,7 @@
             <dd>K M M Rajashekharaiah</dd>
 
             <dt>University</dt>
-            <dd>KLE Techological University</dd>
+            <dd>KLE Technological University</dd>
 
             <dt>Portfolio Topic/Domain</dt>
             <dd>City Design</dd>
@@ -58,5 +61,124 @@
 
         <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
     </section>
+
+    <!-- DAA Lab Reflections Section -->
+    <div class="container">
+        <h1>DAA Lab Reflections</h1>
+        <h2>Key Concepts</h2>
+        <ul>
+            <li><strong>Time Complexity Analysis</strong>
+                <p>Time complexity refers to the computational complexity that describes the amount of time it takes to run an algorithm. It's usually expressed using Big O notation.</p>
+                <pre><code>function linearSearch(arr, target) {
+    for i = 0 to length(arr) - 1:
+        if arr[i] == target:
+            return i
+    return -1
+}</code></pre>
+            </li>
+
+            <li><strong>Binary Search Tree (BST)</strong>
+                <p>A binary search tree is a tree structure where each node has at most two children, left child with values less than the node and right child with greater values.</p>
+                <pre><code>function insertNode(root, value) {
+    if root == null:
+        return new Node(value)
+    if value < root.value:
+        root.left = insertNode(root.left, value)
+    else:
+        root.right = insertNode(root.right, value)
+    return root
+}</code></pre>
+            </li>
+
+            <li><strong>DFS (Depth-First Search) and BFS (Breadth-First Search)</strong>
+                <p>DFS explores as far as possible along each branch before backtracking, while BFS explores all neighbors at the current depth before moving to the next level.</p>
+                <pre><code>function DFS(graph, node, visited) {
+    visited.add(node)
+    for neighbor in graph[node]:
+        if neighbor not in visited:
+            DFS(graph, neighbor, visited)
+}</code></pre>
+                <pre><code>function BFS(graph, start) {
+    visited = set()
+    queue = [start]
+    visited.add(start)
+    while queue is not empty:
+        node = queue.pop(0)
+        for neighbor in graph[node]:
+            if neighbor not in visited:
+                queue.append(neighbor)
+                visited.add(neighbor)
+}</code></pre>
+            </li>
+
+            <li><strong>Heap</strong>
+                <p>A heap is a special tree-based data structure. In a max heap, the value of any given node is greater than or equal to the values of its children.</p>
+                <pre><code>function insert(heap, value) {
+    heap.append(value)
+    i = length(heap) - 1
+    while i > 0 and heap[parent(i)] < heap[i]:
+        swap(heap, i, parent(i))
+        i = parent(i)
+}</code></pre>
+            </li>
+
+            <li><strong>Sorting</strong>
+                <p>Sorting algorithms arrange elements in a list in a specific order. There are many sorting algorithms like Quick Sort, Merge Sort, etc.</p>
+                <pre><code>function quickSort(arr, low, high) {
+    if low < high:
+        pivotIndex = partition(arr, low, high)
+        quickSort(arr, low, pivotIndex - 1)
+        quickSort(arr, pivotIndex + 1, high)
+}</code></pre>
+            </li>
+
+            <li><strong>Pattern Searching</strong>
+                <p>Pattern searching algorithms are used to find occurrences of a string (or pattern) within another string (the text).</p>
+                <pre><code>function naiveSearch(text, pattern) {
+    n = length(text)
+    m = length(pattern)
+    for i = 0 to n - m:
+        j = 0
+        while j < m and text[i + j] == pattern[j]:
+            j = j + 1
+        if j == m:
+            print("Pattern found at index", i)
+}</code></pre>
+            </li>
+
+            <li><strong>Graph Algorithms</strong>
+                <p>Graph algorithms are used to solve problems related to graph structures like shortest path, detecting cycles, etc.</p>
+                <pre><code>function Dijkstra(graph, source) {
+    dist = {}
+    for vertex in graph:
+        dist[vertex] = infinity
+    dist[source] = 0
+    priorityQueue = [(0, source)]
+    while priorityQueue is not empty:
+        currentDist, u = priorityQueue.pop()
+        for neighbor, weight in graph[u]:
+            if dist[u] + weight < dist[neighbor]:
+                dist[neighbor] = dist[u] + weight
+                priorityQueue.push((dist[neighbor], neighbor))
+}</code></pre>
+            </li>
+        </ul>
+
+        <h2>Challenges</h2>
+        <ol>
+            <li><strong>Challenges in Learning/Understanding the Concepts</strong>
+                <p>Some of the main challenges include understanding time complexity, balancing binary search trees, tracking visited nodes in graph traversal, and visualizing heap structures.</p>
+            </li>
+
+            <li><strong>Challenges in Real-World Applications</strong>
+                <p>Handling large datasets and ensuring efficient access, along with applying theoretical concepts to real-world scenarios like social networks or large-scale graphs.</p>
+            </li>
+
+            <li><strong>Determining the Most Efficient Approach</strong>
+                <p>Breaking down the problem, analyzing the constraints, and choosing the best algorithm based on problem size, structure, and requirements are essential for determining efficiency.</p>
+            </li>
+        </ol>
+    </div>
 </body>
+
 </html>
