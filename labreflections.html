@@ -3,125 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAA Lab Reflections</title>
-    <link rel="stylesheet" href="labreflections.css">
+    <title>DAA Concepts, Codes and Challenges</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        p {
+            color: #666;
+        }
+        .concept {
+            margin-bottom: 30px;
+        }
+        .concept h3 {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .challenges {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-left: 4px solid #007bff;
+            margin-bottom: 20px;
+        }
+        .code {
+            background-color: #272822;
+            color: #f8f8f2;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        .code pre {
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>DAA Lab Reflections</h1>
-        <h2>Key Concepts</h2>
-        <ul>
-            <li><strong>Time Complexity Analysis</strong>
-                <p>Time complexity refers to the computational complexity that describes the amount of time it takes to run an algorithm. It's usually expressed using Big O notation.</p>
-                <pre><code>function linearSearch(arr, target) {
-    for i = 0 to length(arr) - 1:
-        if arr[i] == target:
-            return i
-    return -1
-}</code></pre>
-            </li>
 
-            <li><strong>Binary Search Tree (BST)</strong>
-                <p>A binary search tree is a tree structure where each node has at most two children, left child with values less than the node and right child with greater values.</p>
-                <pre><code>function insertNode(root, value) {
-    if root == null:
-        return new Node(value)
-    if value < root.value:
-        root.left = insertNode(root.left, value)
-    else:
-        root.right = insertNode(root.right, value)
-    return root
-}</code></pre>
-            </li>
+<div class="container">
+    <h1>DAA Concepts, Codes and Challenges</h1>
+    <p>Below are key concepts, challenges in learning them, real-world applications, and sample code snippets in C++.</p>
 
-            <li><strong>DFS (Depth-First Search) and BFS (Breadth-First Search)</strong>
-                <p>DFS explores as far as possible along each branch before backtracking, while BFS explores all neighbors at the current depth before moving to the next level.</p>
-                <pre><code>function DFS(graph, node, visited) {
-    visited.add(node)
-    for neighbor in graph[node]:
-        if neighbor not in visited:
-            DFS(graph, neighbor, visited)
-}</code></pre>
-                <pre><code>function BFS(graph, start) {
-    visited = set()
-    queue = [start]
-    visited.add(start)
-    while queue is not empty:
-        node = queue.pop(0)
-        for neighbor in graph[node]:
-            if neighbor not in visited:
-                queue.append(neighbor)
-                visited.add(neighbor)
-}</code></pre>
-            </li>
-
-            <li><strong>Heap</strong>
-                <p>A heap is a special tree-based data structure. In a max heap, the value of any given node is greater than or equal to the values of its children.</p>
-                <pre><code>function insert(heap, value) {
-    heap.append(value)
-    i = length(heap) - 1
-    while i > 0 and heap[parent(i)] < heap[i]:
-        swap(heap, i, parent(i))
-        i = parent(i)
-}</code></pre>
-            </li>
-
-            <li><strong>Sorting</strong>
-                <p>Sorting algorithms arrange elements in a list in a specific order. There are many sorting algorithms like Quick Sort, Merge Sort, etc.</p>
-                <pre><code>function quickSort(arr, low, high) {
-    if low < high:
-        pivotIndex = partition(arr, low, high)
-        quickSort(arr, low, pivotIndex - 1)
-        quickSort(arr, pivotIndex + 1, high)
-}</code></pre>
-            </li>
-
-            <li><strong>Pattern Searching</strong>
-                <p>Pattern searching algorithms are used to find occurrences of a string (or pattern) within another string (the text).</p>
-                <pre><code>function naiveSearch(text, pattern) {
-    n = length(text)
-    m = length(pattern)
-    for i = 0 to n - m:
-        j = 0
-        while j < m and text[i + j] == pattern[j]:
-            j = j + 1
-        if j == m:
-            print("Pattern found at index", i)
-}</code></pre>
-            </li>
-
-            <li><strong>Graph Algorithms</strong>
-                <p>Graph algorithms are used to solve problems related to graph structures like shortest path, detecting cycles, etc.</p>
-                <pre><code>function Dijkstra(graph, source) {
-    dist = {}
-    for vertex in graph:
-        dist[vertex] = infinity
-    dist[source] = 0
-    priorityQueue = [(0, source)]
-    while priorityQueue is not empty:
-        currentDist, u = priorityQueue.pop()
-        for neighbor, weight in graph[u]:
-            if dist[u] + weight < dist[neighbor]:
-                dist[neighbor] = dist[u] + weight
-                priorityQueue.push((dist[neighbor], neighbor))
-}</code></pre>
-            </li>
-        </ul>
-
-        <h2>Challenges</h2>
-        <ol>
-            <li><strong>Challenges in Learning/Understanding the Concepts</strong>
-                <p>Some of the main challenges include understanding time complexity, balancing binary search trees, tracking visited nodes in graph traversal, and visualizing heap structures.</p>
-            </li>
-
-            <li><strong>Challenges in Real-World Applications</strong>
-                <p>Handling large datasets and ensuring efficient access, along with applying theoretical concepts to real-world scenarios like social networks or large-scale graphs.</p>
-            </li>
-
-            <li><strong>Determining the Most Efficient Approach</strong>
-                <p>Breaking down the problem, analyzing the constraints, and choosing the best algorithm based on problem size, structure, and requirements are essential for determining efficiency.</p>
-            </li>
-        </ol>
+    <!-- Time Complexity Analysis -->
+    <div class="concept">
+        <h3>1. Time Complexity Analysis</h3>
+        <div class="challenges">
+            <h4>Challenges in Learning:</h4>
+            <ul>
+                <li>Understanding growth rates like O(1), O(n), O(n^2).</li>
+                <li>Mathematical notations and worst-case vs average-case complexity.</li>
+            </ul>
+        </div>
+        <div class="challenges">
+            <h4>Challenges in Real-World Applications:</h4>
+            <ul>
+                <li>Scalability when handling large datasets.</li>
+                <li>Optimization for real-time systems.</li>
+            </ul>
+        </div>
+        <div class="code">
+            <h4>Sample C++ Code:</h4>
+            <pre>
+// Example: Calculating time complexity of a loop
+void example() {
+    int n = 100;
+    for (int i = 0; i < n; i++) {
+        // O(n) complexity
+    }
+}
+            </pre>
+        </div>
     </div>
+
+    <!-- Binary Search Tree -->
+    <div class="concept">
+        <h3>2. Binary Search Tree (BST)</h3>
+        <div class="challenges">
+            <h4>Challenges in Learning:</h4>
+            <ul>
+                <li>Understanding recursion in BST operations.</li>
+                <li>Balancing trees and handling edge cases.</li>
+            </ul>
+        </div>
+        <div class="challenges">
+            <h4>Challenges in Real-World Applications:</h4>
+            <ul>
+                <li>Efficiency in searching large datasets.</li>
+                <li>Tree balancing in dynamic datasets.</li>
+            </ul>
+        </div>
+        <div class="code">
+            <h4>Sample C++ Code:</h4>
+            <pre>
+// Example: Basic BST insert operation
+struct Node {
+    int data;
+    Node *left, *right;
+};
+
+Node* insert(Node* root, int data) {
+    if (!root) {
+        root = new Node();
+        root->data = data;
+        root->left = root->right = nullptr;
+    } else if (data < root->data) {
+        root->left = insert(root->left, data);
+    } else {
+        root->right = insert(root->right, data);
+    }
+    return root;
+}
+            </pre>
+        </div>
+    </div>
+
+    <!-- DFS and BFS -->
+    <div class="concept">
+        <h3>3. DFS and BFS</h3>
+        <div class="challenges">
+            <h4>Challenges in Learning:</h4>
+            <ul>
+                <li>Understanding recursion in DFS and queue usage in BFS.</li>
+                <li>Cycle detection in graphs.</li>
+            </ul>
+        </div>
+        <div class="challenges">
+            <h4>Challenges in Real-World Applications:</h4>
+            <ul>
+                <li>Large scale network traversal with efficiency.</li>
+                <li>Pathfinding in real-time systems.</li>
+            </ul>
+        </div>
+        <div class="code">
+            <h4>Sample C++ Code:</h4>
+            <pre>
+// Example: DFS traversal of a graph
+void DFS(int v, vector<bool> &visited, vector<vector<int>> &adj) {
+    visited[v] = true;
+    for (int u : adj[v]) {
+        if (!visited[u]) DFS(u, visited, adj);
+    }
+}
+            </pre>
+        </div>
+    </div>
+
+    <!-- Heap -->
+    <div class="concept">
+        <h3>4. Heap</h3>
+        <div class="challenges">
+            <h4>Challenges in Learning:</h4>
+            <ul>
+                <li>Understanding the heap property.</li>
+                <li>Maintaining the heap structure during insertion and deletion.</li>
+            </ul>
+        </div>
+        <div class="challenges">
+            <h4>Challenges in Real-World Applications:</h4>
+            <ul>
+                <li>Efficient priority queues in scheduling and load balancing.</li>
+                <li>Memory management in dynamic data systems.</li>
+            </ul>
+        </div>
+        <div class="code">
+            <h4>Sample C++ Code:</h4>
+            <pre>
+// Example: Heap insert operation in a max-heap
+void heapifyUp(vector<int> &heap, int index) {
+    while (index > 0 && heap[index] > heap[(index - 1) / 2]) {
+        swap(heap[index], heap[(index - 1) / 2]);
+        index = (index - 1) / 2;
+    }
+}
+            </pre>
+        </div>
+    </div>
+
+    <!-- Sorting -->
+    <div class="concept">
+        <h3>5. Sorting Algorithms</h3>
+        <div class="challenges">
+            <h4>Challenges in Learning:</h4>
+            <ul>
+                <li>Understanding different sorting techniques and when to use them.</li>
+                <li>Handling recursive algorithms like Merge Sort and Quick Sort.</li>
+            </ul>
+        </div>
+        <div class="challenges">
+            <h4>Challenges in Real-World Applications:</h4>
+            <ul>
+                <li>Sorting large datasets efficiently in external memory.</li>
+                <li>Real-time sorting in applications like stock trading platforms.</li>
+            </ul>
+        </div>
+        <div class="code">
+            <h4>Sample C++ Code:</h4>
+            <pre>
+// Example: Quick Sort algorithm
+int partition(vector<int> &arr, int low, int high) {
+    int pivot = arr[high];
+    int i = low - 1;
+    for (int j = low; j < high; j++) {
+        if (arr[j] < pivot) {
+            i++;
+            swap(arr[i], arr[j]);
+        }
+    }
+    swap(arr[i + 1], arr[high]);
+    return i + 1;
+}
+
+void quickSort(vector<int> &arr, int low, int high) {
+    if (low < high) {
+        int pi = partition(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+}
+            </pre>
+        </div>
+    </div>
+
+</div>
+
 </body>
 </html>
